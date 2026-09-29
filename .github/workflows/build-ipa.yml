@@ -82,7 +82,7 @@ jobs:
         run: |
           mkdir -p toolchains/llvm-project
           curl -fL "https://github.com/llvm/llvm-project/archive/${LLVM_REF}.tar.gz" \
-            | tar -xz -C toolchains/llvm-project --strip-components=1 --wildcards '*/llvm/*' '*/cmake/*'
+            | tar -xz -C toolchains/llvm-project --strip-components=1 '*/llvm/*' '*/cmake/*'
 
           # dxmt-ios/README.md: use -dead_strip (Apple ld) instead of --gc-sections on iOS
           python3 - <<'PY'
